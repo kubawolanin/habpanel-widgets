@@ -1,0 +1,21 @@
+{
+    "name": "Progress bar 3D",
+    "author": "Kuba Wolanin",
+    "description": "Based on Codrops Shaded Progress Bar",
+    "template": "<!--\nNote:\nYou need to place `progress.css` file from\nhttps://github.com/kubawolanin/habpanel-widgets\nto your <openhab-config>/html/ folder and\npoint to http://youropenhab:8080/static/progress.css\nin HABPanel settings to make it work.\n-->\n\n<h4 style=\"margin: 0\">{{ngModel.name}}</h4>\n\n<div class=\"progress-factor flexy-item\">\n    <div class=\"progress-bar\">\n        <div class=\"bar has-rotation has-colors red {{config.type}}-gradient\" role=\"progressbar\" aria-valuenow=\"{{itemValue(config.item)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n            <div class=\"ps-tooltip white\"></div>\n            <div class=\"bar-face face-position roof percentage\"></div>\n            <div class=\"bar-face face-position back percentage\"></div>\n            <div class=\"bar-face face-position floor percentage volume-lights\"></div>\n            <div class=\"bar-face face-position left\"></div>\n            <div class=\"bar-face face-position right\"></div>\n            <div class=\"bar-face face-position front percentage volume-lights shine\"></div>\n        </div>\n    </div>\n</div>",
+    "settings": [
+        {
+            "type": "item",
+            "id": "item",
+            "label": "Number Item",
+            "description": "Number item"
+        },
+        {
+            "type": "choice",
+            "id": "type",
+            "label": "Bar type",
+            "default": "heat",
+            "choices": "default,heat"
+        }
+    ]
+}

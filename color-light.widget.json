@@ -1,0 +1,27 @@
+{
+    "name": "Color Light",
+    "author": "Kuba Wolanin",
+    "description": "Combined color, brightness and switch widgets.",
+    "template": "<div ng-init='picker = {\n    \"name\": config.name,\n    \"item\": config.color,\n    \"style\": \"aCKolor\"\n};slider = {\n    \"name\": \"\",\n    \"item\": config.brightness,\n    \"floor\": 0,\n    \"ceil\": 100,\n    \"step\": 1,\n    \"unit\": \"\",\n    \"vertical\": false\n};switch = {\n    \"name\": \"\",\n    \"item\": config.brightness,\n    \"hidelabel\": true,\n    \"hideicon\": false,\n    \"hideonoff\": true\n}'>\n    <style>\n    .cl-switch .switch {\n      position: absolute;\n      top: 0;\n      width: 100%;\n\t\t}\n    </style>\n    <widget-colorpicker ng-model=\"picker\"></widget-colorpicker>\n    <widget-slider ng-model=\"slider\"></widget-slider>\n</div>",
+    "settings": [
+        {
+            "type": "string",
+            "id": "name",
+            "label": "Name",
+            "default": "Color Light",
+            "description": "Title of the widget"
+        },
+        {
+            "type": "item",
+            "id": "brightness",
+            "label": "Brightness Item",
+            "description": "Dimmer item for light brightness"
+        },
+        {
+            "type": "item",
+            "id": "color",
+            "label": "Color Item",
+            "description": "Color item"
+        }
+    ]
+}

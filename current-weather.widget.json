@@ -1,0 +1,23 @@
+{
+    "name": "Current weather",
+    "author": "Kuba Wolanin",
+    "description": "Simple weather widget",
+    "template": "<style>\n.weather-content {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n  --size: {{ (ngModel.sizeY > ngModel.sizeX) ? (ngModel.sizeX * 65) : (ngModel.sizeY * 65)  }}px\n}\n\n.weather-row {\n\tmargin: 0 10px;\n\twidth: 100%;\n  overflow: hidden;\n}\n\n.weather-icon {\n\tpadding: 0;\n}\n\n.weather-icon img {\n\twidth: 100%;\n}\n  \n.col-md-12.weather-icon img {\n  margin-top: -11%;\n}\n\n.weather-condition {\n\ttext-align: left;\n}\n\n.col-md-12.weather-condition {\n  margin-top: -17%;\n}\n\n.weather-condition span {\n\twidth: 100%;\n\tdisplay: block;\n}\n\n.weather-condition span.weather-city {\n\tfont-size: 2em;\n\tpadding-top: .625em;\n  white-space: nowrap;\n}\n\n.weather-condition.col-md-12 > .weather-city {\n  font-size: 1.25em !important;\n}\n\n.weather-condition span.weather-condition-label {\n\tfont-size: 1.5em;\n\tcolor: rgba(255, 255, 255, 0.7);\n  white-space: nowrap;\n}\n\n.weather-temperature {\n\ttext-align: right;\n\tpadding-left: 0;\n}\n\n.weather-temperature span {\n\tfont-size: 4em;\n\twhite-space: nowrap;\n}\n  \n.floating.weather-temperature {\n  position: absolute;\n  top: 0;\n}\n\n.weather-details {\n\tborder-top: 1px solid rgba(255, 255, 255, 0.4);\n\ttext-align: center;\n\tfont-size: 1.25em;\n\tpadding: 1em;\n\tcolor: rgba(255, 255, 255, 0.6);\n\tmargin: 0;\n\tposition: absolute;\n\tbottom: 0;\n\twidth: 100%;\n\twhite-space: nowrap;\n}\n\n.weather-details img {\n\twidth: 24px;\n\t-webkit-filter: grayscale(100%);\n\tfilter: grayscale(100%);\n}\n</style>\n<div class=\"weather-content\">\n  <div class=\"weather-row\">\n    <div class=\"weather-icon\" ng-class=\"(ngModel.sizeX === ngModel.sizeY) ? 'col-md-12' : 'col-md-3'\">\n\t\t<img style=\"filter: invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%);\"\n\t\tsrc=\"/icon/climacon?iconset=climacons&format=svg&state={{itemValue(config.weather_condition)}}\" />\n    </div>\n    <div class=\"weather-condition\" ng-class=\"(ngModel.sizeX === ngModel.sizeY) ? 'col-md-12' : 'col-md-6'\">\n        <span class=\"weather-city\">{{ngModel.name}}</span>\n        <span class=\"weather-condition-label\">\n            {{itemValue(config.formatted_weather_condition)}}\n        </span>\n    </div>\n    <div class=\"col-md-3 weather-temperature\" ng-class=\"(ngModel.sizeX === ngModel.sizeY) ? 'floating' : ''\">\n        <span>{{itemValue(config.temperature) | number:0}}°</span>\n    </div>\n  </div>\n</div>",
+    "settings": [
+        {
+            "type": "item",
+            "id": "weather_condition",
+            "label": "Weather condition"
+        },
+        {
+            "type": "item",
+            "id": "formatted_weather_condition",
+            "label": "Formatted weather condition"
+        },
+        {
+            "type": "item",
+            "id": "temperature",
+            "label": "Temperature"
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "template": "<style>\nnav.directions {\n  --bg-color: transparent;\n  --btn-color: {{config.btn_color || '#fff'}};\n  --btn-active: #ccc;\n  --text-color: #222;\n  --size: {{ (ngModel.sizeY > ngModel.sizeX) ? (ngModel.sizeX * 65) : (ngModel.sizeY * 65)  }}px\n}\n\nnav.directions {\n  width: var(--size);\n  height: var(--size);\n  background: var(--bg-color);\n  border-radius: 50%;\n  padding: 20px;\n  -webkit-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  transform: rotate(45deg);\n  box-shadow: inset 12px 0 12px -6px var(--btn-color), inset 0 0 0 12px var(--btn-color);\n  box-sizing: border-box;\n  position: relative;\n  margin: 10px auto;\n}\n\nnav.directions button {\n  background: var(--btn-color);\n  color: var(--text-color);\n  text-decoration: none;\n  outline: none;\n  display: block;\n  border: none;\n  -webkit-transition: .1s background, .2s box-shadow;\n}\n  \nnav.directions button:active {\n  background: var(--btn-active);\n  box-shadow: inset 2px 4px rgba(0, 0, 0, 0.2);\n}\n\nnav.directions .center-button { \n  height: 38%;\n  width: 38%;\n  position: absolute;\n  top: 31%;\n  left: 31%;\n  border-radius: 50%;\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n  font-size: 1.250em;\n  font-weight: 500;\n  text-transform: uppercase;\n  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .33), inset -2px -4px rgba(0, 0, 0, 0.2);\n}\n\nnav.directions .center-button:active {\n  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .33), inset 2px 4px rgba(0, 0, 0, 0.2);\n}\n\nnav.directions .button {\n  width: 46%;\n  height: 46%;\n  margin: 2%;\n  position: relative;\n  float: left;\n}\n\nnav.directions .button::after {\n  content: \"\";\n  width: 0;\n  position: absolute;\n  border-radius: initial;\n}\n\nnav.directions button.top {\n  border-radius: 100% 0 0 0;\n}\n\nnav.directions button.top::after {\n  bottom: 0;\n  right: 0;\n}\n\nnav.directions button.right {\n  border-radius: 0 100% 0 0;\n}\n\nnav.directions button.right::after {\n  bottom: 0;\n  left: 0;\n}\n\nnav.directions button.left {\n  border-radius: 0 0 0 100%;\n}\n\nnav.directions button.left::after {\n  top: 0;\n  right: 0;\n}\n\nnav.directions button.bottom {\n  border-radius: 0 0 100% 0;\n}\n\nnav.directions button.bottom::after {\n  top: 0;\n  left: 0;\n  box-shadow: inset -2px -3px 2px -2px rgba(0, 0, 0, 0.4), -10px -10px 0 10px var(--bg-color);\n}\n\nnav.directions i {\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n  position: absolute;\n  font-size: calc(var(--size)/10);\n  top: 36%;\n  left: 39%;\n  text-shadow: 1px 1px 4px var(--btn-color), 0px 0px 0px rgba(0, 0, 0, 0.5);\n  color: rgba(0, 0, 0, 0.15);\n}\n\nnav.directions .button:active i {\n    color: var(--text-color);\n    text-shadow: none;\n}\n\nnav.directions .top i {\n  top: 35%;\n  left: 41%;\n}\n\nnav.directions .left i {\n  top: 41%;\n  left: 35%;\n}\n\nnav.directions .right i {\n  top: 35%;\n  left: 41%;\n}\n\nnav.directions .bottom i {\n  top: 39%;\n  left: 42%;\n}\n</style>\n<nav class=\"directions\">\n  <button class=\"button top\" ng-click=\"sendCmd(config.direction_button, config.up_command)\"><i class=\"glyphicon glyphicon-chevron-up\"></i></button>\n  <button class=\"button right\" ng-click=\"sendCmd(config.direction_button, config.right_command)\"><i class=\"glyphicon glyphicon-chevron-right\"></i></button>\n  <button class=\"button left\" ng-click=\"sendCmd(config.direction_button, config.left_command)\"><i class=\"glyphicon glyphicon-chevron-left\"></i></button>\n  <button class=\"button bottom\" ng-click=\"sendCmd(config.direction_button, config.down_command)\"><i class=\"glyphicon glyphicon-chevron-down\"></i></button>\n  <button class=\"center-button\" ng-click=\"sendCmd(config.center_button, config.center_command)\">{{config.center_label}}</button>\n</nav>\n  ",
+    "settings": [
+        {
+            "type": "item",
+            "id": "center_button",
+            "label": "Center button"
+        },
+        {
+            "type": "string",
+            "id": "center_label",
+            "label": "Center button label"
+        },
+        {
+            "type": "string",
+            "id": "center_command",
+            "label": "Center command"
+        },
+        {
+            "type": "item",
+            "id": "direction_button",
+            "label": "Directions"
+        },
+        {
+            "type": "string",
+            "id": "up_command",
+            "label": "Up command"
+        },
+        {
+            "type": "string",
+            "id": "down_command",
+            "label": "Down command"
+        },
+        {
+            "type": "string",
+            "id": "left_command",
+            "label": "Left command"
+        },
+        {
+            "type": "string",
+            "id": "right_command",
+            "label": "Right command"
+        },
+        {
+            "type": "color",
+            "id": "btn_color",
+            "label": "Button color"
+        }
+    ],
+    "name": "Direction buttons",
+    "author": "Kuba Wolanin",
+    "description": "Simple remote control-like direction buttons"
+}

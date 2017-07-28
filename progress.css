@@ -1,0 +1,1458 @@
+.progress-factor {
+    font-size: 5em;
+    padding: 1em .2em 0;
+    flex: 0 1 100%;
+}
+
+.progress-factor .progress-bar {
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+    background: none;
+    height: 1em;
+    perspective: 12em;
+    perspective-origin: 50% 50%;
+}
+
+.progress-factor .bar {
+    font-size: 1em;
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: 1em;
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.progress-factor .bar.regular-width {
+    width: 1em;
+}
+
+.progress-factor .bar.regular-width[aria-valuenow] .percentage:before {
+    width: 100%;
+}
+
+.progress-factor .bar.has-rotation {
+    transform: rotateX(60deg);
+}
+
+.progress-factor .bar .bar-face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 64, 105, 0.3);
+    backface-visibility: visible;
+    transition: transform 0.5s ease-out;
+}
+
+.progress-factor .bar .bar-face.face-position {
+    transform-origin: 50% 100%;
+}
+
+.progress-factor .bar .bar-face.face-position.roof {
+    transform: translateZ(1em);
+    transition-delay: 2s;
+}
+
+.progress-factor .bar .bar-face.face-position.front {
+    transform: rotateX(-90deg);
+    transition-delay: 0s;
+}
+
+.progress-factor .bar .bar-face.face-position.right {
+    left: auto;
+    right: -.5em;
+    width: 1em;
+    transform: rotateX(-90deg) rotateY(90deg) translateX(0.5em);
+    transition-delay: 0.5s;
+}
+
+.progress-factor .bar .bar-face.face-position.back {
+    transform: rotateX(-90deg) rotateY(0deg) translateZ(-1em);
+    transition-delay: 1s;
+}
+
+.progress-factor .bar .bar-face.face-position.left {
+    width: 1em;
+    transform: rotateX(-90deg) rotateY(-90deg) translateX(-0.5em) translateZ(0.5em);
+    transition-delay: 1.5s;
+}
+
+.progress-factor .bar .bar-face.percentage:before {
+    content: '';
+    font-size: .25em;
+    line-height: 4em;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    margin: 0;
+    display: block;
+    box-sizing: border-box;
+    color: rgba(68, 68, 68, 0.8);
+    transition: all 0.5s ease-out;
+}
+
+.progress-factor .bar.red .bar-face,
+.bar.red[aria-valuenow='0'] .face-position.right {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-factor .bar.red .face-position.left,
+.bar.red[aria-valuenow='100'] .face-position.right {
+    background-color: rgba(236, 0, 113, 0.2);
+}
+
+.progress-factor .bar.red[aria-valuenow='100'] .face-position.right {
+    transition-delay: 0.5s;
+}
+
+.progress-factor .bar.red .face-position.floor.volume-lights {
+    box-shadow: 0 -0.2em 1em rgba(0, 0, 0, 0.15), 0 0.2em 0.1em -5px rgba(0, 0, 0, 0.3), 0 -0.75em 1.75em rgba(254, 254, 254, 0.6);
+}
+
+.progress-factor .bar.red .percentage:before {
+    background-color: rgba(236, 0, 113, 0.5);
+}
+
+.progress-factor .bar.red .volume-lights.shine:before {
+    box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0.25);
+}
+
+.progress-factor .bar.red:not(.has-colors)[aria-valuenow] .face-position {
+    background-color: rgba(68, 68, 68, 0.6);
+}
+
+.progress-factor .bar.red:not(.has-colors) .percentage:before {
+    background-color: transparent;
+}
+
+.progress-factor .bar.red:not(.has-colors) .volume-lights.shine:before {
+    box-shadow: 0 1.6em 3em rgba(236, 0, 113, 0);
+}
+
+.progress-factor .bar[aria-valuenow='1'] .percentage:before {
+    width: 1%;
+}
+
+.progress-factor .bar[aria-valuenow='2'] .percentage:before {
+    width: 2%;
+}
+
+.progress-factor .bar[aria-valuenow='3'] .percentage:before {
+    width: 3%;
+}
+
+.progress-factor .bar[aria-valuenow='4'] .percentage:before {
+    width: 4%;
+}
+
+.progress-factor .bar[aria-valuenow='5'] .percentage:before {
+    width: 5%;
+}
+
+.progress-factor .bar[aria-valuenow='6'] .percentage:before {
+    width: 6%;
+}
+
+.progress-factor .bar[aria-valuenow='7'] .percentage:before {
+    width: 7%;
+}
+
+.progress-factor .bar[aria-valuenow='8'] .percentage:before {
+    width: 8%;
+}
+
+.progress-factor .bar[aria-valuenow='9'] .percentage:before {
+    width: 9%;
+}
+
+.progress-factor .bar[aria-valuenow='10'] .percentage:before {
+    width: 10%;
+}
+
+.progress-factor .bar[aria-valuenow='11'] .percentage:before {
+    width: 11%;
+}
+
+.progress-factor .bar[aria-valuenow='12'] .percentage:before {
+    width: 12%;
+}
+
+.progress-factor .bar[aria-valuenow='13'] .percentage:before {
+    width: 13%;
+}
+
+.progress-factor .bar[aria-valuenow='14'] .percentage:before {
+    width: 14%;
+}
+
+.progress-factor .bar[aria-valuenow='15'] .percentage:before {
+    width: 15%;
+}
+
+.progress-factor .bar[aria-valuenow='16'] .percentage:before {
+    width: 16%;
+}
+
+.progress-factor .bar[aria-valuenow='17'] .percentage:before {
+    width: 17%;
+}
+
+.progress-factor .bar[aria-valuenow='18'] .percentage:before {
+    width: 18%;
+}
+
+.progress-factor .bar[aria-valuenow='19'] .percentage:before {
+    width: 19%;
+}
+
+.progress-factor .bar[aria-valuenow='20'] .percentage:before {
+    width: 20%;
+}
+
+.progress-factor .bar[aria-valuenow='21'] .percentage:before {
+    width: 21%;
+}
+
+.progress-factor .bar[aria-valuenow='22'] .percentage:before {
+    width: 22%;
+}
+
+.progress-factor .bar[aria-valuenow='23'] .percentage:before {
+    width: 23%;
+}
+
+.progress-factor .bar[aria-valuenow='24'] .percentage:before {
+    width: 24%;
+}
+
+.progress-factor .bar[aria-valuenow='25'] .percentage:before {
+    width: 25%;
+}
+
+.progress-factor .bar[aria-valuenow='26'] .percentage:before {
+    width: 26%;
+}
+
+.progress-factor .bar[aria-valuenow='27'] .percentage:before {
+    width: 27%;
+}
+
+.progress-factor .bar[aria-valuenow='28'] .percentage:before {
+    width: 28%;
+}
+
+.progress-factor .bar[aria-valuenow='29'] .percentage:before {
+    width: 29%;
+}
+
+.progress-factor .bar[aria-valuenow='30'] .percentage:before {
+    width: 30%;
+}
+
+.progress-factor .bar[aria-valuenow='31'] .percentage:before {
+    width: 31%;
+}
+
+.progress-factor .bar[aria-valuenow='32'] .percentage:before {
+    width: 32%;
+}
+
+.progress-factor .bar[aria-valuenow='33'] .percentage:before {
+    width: 33%;
+}
+
+.progress-factor .bar[aria-valuenow='34'] .percentage:before {
+    width: 34%;
+}
+
+.progress-factor .bar[aria-valuenow='35'] .percentage:before {
+    width: 35%;
+}
+
+.progress-factor .bar[aria-valuenow='36'] .percentage:before {
+    width: 36%;
+}
+
+.progress-factor .bar[aria-valuenow='37'] .percentage:before {
+    width: 37%;
+}
+
+.progress-factor .bar[aria-valuenow='38'] .percentage:before {
+    width: 38%;
+}
+
+.progress-factor .bar[aria-valuenow='39'] .percentage:before {
+    width: 39%;
+}
+
+.progress-factor .bar[aria-valuenow='40'] .percentage:before {
+    width: 40%;
+}
+
+.progress-factor .bar[aria-valuenow='41'] .percentage:before {
+    width: 41%;
+}
+
+.progress-factor .bar[aria-valuenow='42'] .percentage:before {
+    width: 42%;
+}
+
+.progress-factor .bar[aria-valuenow='43'] .percentage:before {
+    width: 43%;
+}
+
+.progress-factor .bar[aria-valuenow='44'] .percentage:before {
+    width: 44%;
+}
+
+.progress-factor .bar[aria-valuenow='45'] .percentage:before {
+    width: 45%;
+}
+
+.progress-factor .bar[aria-valuenow='46'] .percentage:before {
+    width: 46%;
+}
+
+.progress-factor .bar[aria-valuenow='47'] .percentage:before {
+    width: 47%;
+}
+
+.progress-factor .bar[aria-valuenow='48'] .percentage:before {
+    width: 48%;
+}
+
+.progress-factor .bar[aria-valuenow='49'] .percentage:before {
+    width: 49%;
+}
+
+.progress-factor .bar[aria-valuenow='50'] .percentage:before {
+    width: 50%;
+}
+
+.progress-factor .bar[aria-valuenow='51'] .percentage:before {
+    width: 51%;
+}
+
+.progress-factor .bar[aria-valuenow='52'] .percentage:before {
+    width: 52%;
+}
+
+.progress-factor .bar[aria-valuenow='53'] .percentage:before {
+    width: 53%;
+}
+
+.progress-factor .bar[aria-valuenow='54'] .percentage:before {
+    width: 54%;
+}
+
+.progress-factor .bar[aria-valuenow='55'] .percentage:before {
+    width: 55%;
+}
+
+.progress-factor .bar[aria-valuenow='56'] .percentage:before {
+    width: 56%;
+}
+
+.progress-factor .bar[aria-valuenow='57'] .percentage:before {
+    width: 57%;
+}
+
+.progress-factor .bar[aria-valuenow='58'] .percentage:before {
+    width: 58%;
+}
+
+.progress-factor .bar[aria-valuenow='59'] .percentage:before {
+    width: 59%;
+}
+
+.progress-factor .bar[aria-valuenow='60'] .percentage:before {
+    width: 60%;
+}
+
+.progress-factor .bar[aria-valuenow='61'] .percentage:before {
+    width: 61%;
+}
+
+.progress-factor .bar[aria-valuenow='62'] .percentage:before {
+    width: 62%;
+}
+
+.progress-factor .bar[aria-valuenow='63'] .percentage:before {
+    width: 63%;
+}
+
+.progress-factor .bar[aria-valuenow='64'] .percentage:before {
+    width: 64%;
+}
+
+.progress-factor .bar[aria-valuenow='65'] .percentage:before {
+    width: 65%;
+}
+
+.progress-factor .bar[aria-valuenow='66'] .percentage:before {
+    width: 66%;
+}
+
+.progress-factor .bar[aria-valuenow='67'] .percentage:before {
+    width: 67%;
+}
+
+.progress-factor .bar[aria-valuenow='68'] .percentage:before {
+    width: 68%;
+}
+
+.progress-factor .bar[aria-valuenow='69'] .percentage:before {
+    width: 69%;
+}
+
+.progress-factor .bar[aria-valuenow='70'] .percentage:before {
+    width: 70%;
+}
+
+.progress-factor .bar[aria-valuenow='71'] .percentage:before {
+    width: 71%;
+}
+
+.progress-factor .bar[aria-valuenow='72'] .percentage:before {
+    width: 72%;
+}
+
+.progress-factor .bar[aria-valuenow='73'] .percentage:before {
+    width: 73%;
+}
+
+.progress-factor .bar[aria-valuenow='74'] .percentage:before {
+    width: 74%;
+}
+
+.progress-factor .bar[aria-valuenow='75'] .percentage:before {
+    width: 75%;
+}
+
+.progress-factor .bar[aria-valuenow='76'] .percentage:before {
+    width: 76%;
+}
+
+.progress-factor .bar[aria-valuenow='77'] .percentage:before {
+    width: 77%;
+}
+
+.progress-factor .bar[aria-valuenow='78'] .percentage:before {
+    width: 78%;
+}
+
+.progress-factor .bar[aria-valuenow='79'] .percentage:before {
+    width: 79%;
+}
+
+.progress-factor .bar[aria-valuenow='80'] .percentage:before {
+    width: 80%;
+}
+
+.progress-factor .bar[aria-valuenow='81'] .percentage:before {
+    width: 81%;
+}
+
+.progress-factor .bar[aria-valuenow='82'] .percentage:before {
+    width: 82%;
+}
+
+.progress-factor .bar[aria-valuenow='83'] .percentage:before {
+    width: 83%;
+}
+
+.progress-factor .bar[aria-valuenow='84'] .percentage:before {
+    width: 84%;
+}
+
+.progress-factor .bar[aria-valuenow='85'] .percentage:before {
+    width: 85%;
+}
+
+.progress-factor .bar[aria-valuenow='86'] .percentage:before {
+    width: 86%;
+}
+
+.progress-factor .bar[aria-valuenow='87'] .percentage:before {
+    width: 87%;
+}
+
+.progress-factor .bar[aria-valuenow='88'] .percentage:before {
+    width: 88%;
+}
+
+.progress-factor .bar[aria-valuenow='89'] .percentage:before {
+    width: 89%;
+}
+
+.progress-factor .bar[aria-valuenow='90'] .percentage:before {
+    width: 90%;
+}
+
+.progress-factor .bar[aria-valuenow='91'] .percentage:before {
+    width: 91%;
+}
+
+.progress-factor .bar[aria-valuenow='92'] .percentage:before {
+    width: 92%;
+}
+
+.progress-factor .bar[aria-valuenow='93'] .percentage:before {
+    width: 93%;
+}
+
+.progress-factor .bar[aria-valuenow='94'] .percentage:before {
+    width: 94%;
+}
+
+.progress-factor .bar[aria-valuenow='95'] .percentage:before {
+    width: 95%;
+}
+
+.progress-factor .bar[aria-valuenow='96'] .percentage:before {
+    width: 96%;
+}
+
+.progress-factor .bar[aria-valuenow='97'] .percentage:before {
+    width: 97%;
+}
+
+.progress-factor .bar[aria-valuenow='98'] .percentage:before {
+    width: 98%;
+}
+
+.progress-factor .bar[aria-valuenow='99'] .percentage:before {
+    width: 99%;
+}
+
+.progress-factor .bar[aria-valuenow='100'] .percentage:before {
+    width: 100%;
+}
+
+.progress-factor .ps-tooltip {
+    font-size: .65em;
+    font-weight: bold;
+    margin: 1.85em 0 0 -.5em;
+    display: inline-block;
+    position: absolute;
+    line-height: 1em;
+    height: 1em;
+    width: 1em;
+    left: 0;
+    background-color: #ff6db3;
+    color: #fefefe;
+    border-bottom: 1px solid #ff53a5;
+    box-shadow: 0 0.05em 0.1em -0.02em rgba(0, 0, 0, 0.4), 0 0.1em 0.6em rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-out;
+}
+
+.progress-factor .ps-tooltip:after,
+.ps-tooltip:before {
+    display: inline-block;
+    font-size: .25em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.progress-factor .ps-tooltip:after {
+    content: '';
+    height: 0;
+    width: 0;
+    margin: -.75em 0 0 1em;
+    border: 1em solid transparent;
+    border-bottom-color: #ff6db3;
+    border-top-width: 0;
+    transition: all 0.5s ease-out;
+}
+
+.progress-factor .ps-tooltip:before {
+    height: 100%;
+    text-align: center;
+}
+
+.progress-factor .ps-tooltip.pos-2 {
+    box-shadow: none;
+    margin-top: -.6em;
+    transform: rotateX(-90deg) translateY(-0.5em);
+    transform-origin: 50% 100%;
+}
+
+.progress-factor .ps-tooltip.pos-2:after {
+    margin: 3.75em 0 0 1em;
+    border-bottom-color: inherit;
+    border-bottom-width: 0;
+    border-top-width: 1em;
+    border-top-color: #ff6db3;
+}
+
+.progress-factor .ps-tooltip.pos-2 .shadow {
+    display: inline-block;
+    width: 20%;
+    height: .02em;
+    background-color: transparent;
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+    box-shadow: 0 0.7em 0.05em black, 0 0.7em 0.3em black;
+}
+
+.progress-factor .ps-tooltip.white {
+    background-color: #fefefe;
+    border-bottom: 1px solid #e5e5e5;
+    color: #444444;
+    box-shadow: 0 0.08em 0.1em 0em rgba(0, 0, 0, 0.2), 0 0.1em 1.6em rgba(0, 0, 0, 0.2);
+}
+
+.progress-factor .ps-tooltip.white:after {
+    border-bottom-color: #fefefe;
+}
+
+.progress-factor .bar[aria-valuenow='1'] .ps-tooltip {
+    left: 1%;
+}
+
+.progress-factor .bar[aria-valuenow='1'] .ps-tooltip:before {
+    content: "1%";
+}
+
+.progress-factor .bar[aria-valuenow='2'] .ps-tooltip {
+    left: 2%;
+}
+
+.progress-factor .bar[aria-valuenow='2'] .ps-tooltip:before {
+    content: "2%";
+}
+
+.progress-factor .bar[aria-valuenow='3'] .ps-tooltip {
+    left: 3%;
+}
+
+.progress-factor .bar[aria-valuenow='3'] .ps-tooltip:before {
+    content: "3%";
+}
+
+.progress-factor .bar[aria-valuenow='4'] .ps-tooltip {
+    left: 4%;
+}
+
+.progress-factor .bar[aria-valuenow='4'] .ps-tooltip:before {
+    content: "4%";
+}
+
+.progress-factor .bar[aria-valuenow='5'] .ps-tooltip {
+    left: 5%;
+}
+
+.progress-factor .bar[aria-valuenow='5'] .ps-tooltip:before {
+    content: "5%";
+}
+
+.progress-factor .bar[aria-valuenow='6'] .ps-tooltip {
+    left: 6%;
+}
+
+.progress-factor .bar[aria-valuenow='6'] .ps-tooltip:before {
+    content: "6%";
+}
+
+.progress-factor .bar[aria-valuenow='7'] .ps-tooltip {
+    left: 7%;
+}
+
+.progress-factor .bar[aria-valuenow='7'] .ps-tooltip:before {
+    content: "7%";
+}
+
+.progress-factor .bar[aria-valuenow='8'] .ps-tooltip {
+    left: 8%;
+}
+
+.progress-factor .bar[aria-valuenow='8'] .ps-tooltip:before {
+    content: "8%";
+}
+
+.progress-factor .bar[aria-valuenow='9'] .ps-tooltip {
+    left: 9%;
+}
+
+.progress-factor .bar[aria-valuenow='9'] .ps-tooltip:before {
+    content: "9%";
+}
+
+.progress-factor .bar[aria-valuenow='10'] .ps-tooltip {
+    left: 10%;
+}
+
+.progress-factor .bar[aria-valuenow='10'] .ps-tooltip:before {
+    content: "10%";
+}
+
+.progress-factor .bar[aria-valuenow='11'] .ps-tooltip {
+    left: 11%;
+}
+
+.progress-factor .bar[aria-valuenow='11'] .ps-tooltip:before {
+    content: "11%";
+}
+
+.progress-factor .bar[aria-valuenow='12'] .ps-tooltip {
+    left: 12%;
+}
+
+.progress-factor .bar[aria-valuenow='12'] .ps-tooltip:before {
+    content: "12%";
+}
+
+.progress-factor .bar[aria-valuenow='13'] .ps-tooltip {
+    left: 13%;
+}
+
+.progress-factor .bar[aria-valuenow='13'] .ps-tooltip:before {
+    content: "13%";
+}
+
+.progress-factor .bar[aria-valuenow='14'] .ps-tooltip {
+    left: 14%;
+}
+
+.progress-factor .bar[aria-valuenow='14'] .ps-tooltip:before {
+    content: "14%";
+}
+
+.progress-factor .bar[aria-valuenow='15'] .ps-tooltip {
+    left: 15%;
+}
+
+.progress-factor .bar[aria-valuenow='15'] .ps-tooltip:before {
+    content: "15%";
+}
+
+.progress-factor .bar[aria-valuenow='16'] .ps-tooltip {
+    left: 16%;
+}
+
+.progress-factor .bar[aria-valuenow='16'] .ps-tooltip:before {
+    content: "16%";
+}
+
+.progress-factor .bar[aria-valuenow='17'] .ps-tooltip {
+    left: 17%;
+}
+
+.progress-factor .bar[aria-valuenow='17'] .ps-tooltip:before {
+    content: "17%";
+}
+
+.progress-factor .bar[aria-valuenow='18'] .ps-tooltip {
+    left: 18%;
+}
+
+.progress-factor .bar[aria-valuenow='18'] .ps-tooltip:before {
+    content: "18%";
+}
+
+.progress-factor .bar[aria-valuenow='19'] .ps-tooltip {
+    left: 19%;
+}
+
+.progress-factor .bar[aria-valuenow='19'] .ps-tooltip:before {
+    content: "19%";
+}
+
+.progress-factor .bar[aria-valuenow='20'] .ps-tooltip {
+    left: 20%;
+}
+
+.progress-factor .bar[aria-valuenow='20'] .ps-tooltip:before {
+    content: "20%";
+}
+
+.progress-factor .bar[aria-valuenow='21'] .ps-tooltip {
+    left: 21%;
+}
+
+.progress-factor .bar[aria-valuenow='21'] .ps-tooltip:before {
+    content: "21%";
+}
+
+.progress-factor .bar[aria-valuenow='22'] .ps-tooltip {
+    left: 22%;
+}
+
+.progress-factor .bar[aria-valuenow='22'] .ps-tooltip:before {
+    content: "22%";
+}
+
+.progress-factor .bar[aria-valuenow='23'] .ps-tooltip {
+    left: 23%;
+}
+
+.progress-factor .bar[aria-valuenow='23'] .ps-tooltip:before {
+    content: "23%";
+}
+
+.progress-factor .bar[aria-valuenow='24'] .ps-tooltip {
+    left: 24%;
+}
+
+.progress-factor .bar[aria-valuenow='24'] .ps-tooltip:before {
+    content: "24%";
+}
+
+.progress-factor .bar[aria-valuenow='25'] .ps-tooltip {
+    left: 25%;
+}
+
+.progress-factor .bar[aria-valuenow='25'] .ps-tooltip:before {
+    content: "25%";
+}
+
+.progress-factor .bar[aria-valuenow='26'] .ps-tooltip {
+    left: 26%;
+}
+
+.progress-factor .bar[aria-valuenow='26'] .ps-tooltip:before {
+    content: "26%";
+}
+
+.progress-factor .bar[aria-valuenow='27'] .ps-tooltip {
+    left: 27%;
+}
+
+.progress-factor .bar[aria-valuenow='27'] .ps-tooltip:before {
+    content: "27%";
+}
+
+.progress-factor .bar[aria-valuenow='28'] .ps-tooltip {
+    left: 28%;
+}
+
+.progress-factor .bar[aria-valuenow='28'] .ps-tooltip:before {
+    content: "28%";
+}
+
+.progress-factor .bar[aria-valuenow='29'] .ps-tooltip {
+    left: 29%;
+}
+
+.progress-factor .bar[aria-valuenow='29'] .ps-tooltip:before {
+    content: "29%";
+}
+
+.progress-factor .bar[aria-valuenow='30'] .ps-tooltip {
+    left: 30%;
+}
+
+.progress-factor .bar[aria-valuenow='30'] .ps-tooltip:before {
+    content: "30%";
+}
+
+.progress-factor .bar[aria-valuenow='31'] .ps-tooltip {
+    left: 31%;
+}
+
+.progress-factor .bar[aria-valuenow='31'] .ps-tooltip:before {
+    content: "31%";
+}
+
+.progress-factor .bar[aria-valuenow='32'] .ps-tooltip {
+    left: 32%;
+}
+
+.progress-factor .bar[aria-valuenow='32'] .ps-tooltip:before {
+    content: "32%";
+}
+
+.progress-factor .bar[aria-valuenow='33'] .ps-tooltip {
+    left: 33%;
+}
+
+.progress-factor .bar[aria-valuenow='33'] .ps-tooltip:before {
+    content: "33%";
+}
+
+.progress-factor .bar[aria-valuenow='34'] .ps-tooltip {
+    left: 34%;
+}
+
+.progress-factor .bar[aria-valuenow='34'] .ps-tooltip:before {
+    content: "34%";
+}
+
+.progress-factor .bar[aria-valuenow='35'] .ps-tooltip {
+    left: 35%;
+}
+
+.progress-factor .bar[aria-valuenow='35'] .ps-tooltip:before {
+    content: "35%";
+}
+
+.progress-factor .bar[aria-valuenow='36'] .ps-tooltip {
+    left: 36%;
+}
+
+.progress-factor .bar[aria-valuenow='36'] .ps-tooltip:before {
+    content: "36%";
+}
+
+.progress-factor .bar[aria-valuenow='37'] .ps-tooltip {
+    left: 37%;
+}
+
+.progress-factor .bar[aria-valuenow='37'] .ps-tooltip:before {
+    content: "37%";
+}
+
+.progress-factor .bar[aria-valuenow='38'] .ps-tooltip {
+    left: 38%;
+}
+
+.progress-factor .bar[aria-valuenow='38'] .ps-tooltip:before {
+    content: "38%";
+}
+
+.progress-factor .bar[aria-valuenow='39'] .ps-tooltip {
+    left: 39%;
+}
+
+.progress-factor .bar[aria-valuenow='39'] .ps-tooltip:before {
+    content: "39%";
+}
+
+.progress-factor .bar[aria-valuenow='40'] .ps-tooltip {
+    left: 40%;
+}
+
+.progress-factor .bar[aria-valuenow='40'] .ps-tooltip:before {
+    content: "40%";
+}
+
+.progress-factor .bar[aria-valuenow='41'] .ps-tooltip {
+    left: 41%;
+}
+
+.progress-factor .bar[aria-valuenow='41'] .ps-tooltip:before {
+    content: "41%";
+}
+
+.progress-factor .bar[aria-valuenow='42'] .ps-tooltip {
+    left: 42%;
+}
+
+.progress-factor .bar[aria-valuenow='42'] .ps-tooltip:before {
+    content: "42%";
+}
+
+.progress-factor .bar[aria-valuenow='43'] .ps-tooltip {
+    left: 43%;
+}
+
+.progress-factor .bar[aria-valuenow='43'] .ps-tooltip:before {
+    content: "43%";
+}
+
+.progress-factor .bar[aria-valuenow='44'] .ps-tooltip {
+    left: 44%;
+}
+
+.progress-factor .bar[aria-valuenow='44'] .ps-tooltip:before {
+    content: "44%";
+}
+
+.progress-factor .bar[aria-valuenow='45'] .ps-tooltip {
+    left: 45%;
+}
+
+.progress-factor .bar[aria-valuenow='45'] .ps-tooltip:before {
+    content: "45%";
+}
+
+.progress-factor .bar[aria-valuenow='46'] .ps-tooltip {
+    left: 46%;
+}
+
+.progress-factor .bar[aria-valuenow='46'] .ps-tooltip:before {
+    content: "46%";
+}
+
+.progress-factor .bar[aria-valuenow='47'] .ps-tooltip {
+    left: 47%;
+}
+
+.progress-factor .bar[aria-valuenow='47'] .ps-tooltip:before {
+    content: "47%";
+}
+
+.progress-factor .bar[aria-valuenow='48'] .ps-tooltip {
+    left: 48%;
+}
+
+.progress-factor .bar[aria-valuenow='48'] .ps-tooltip:before {
+    content: "48%";
+}
+
+.progress-factor .bar[aria-valuenow='49'] .ps-tooltip {
+    left: 49%;
+}
+
+.progress-factor .bar[aria-valuenow='49'] .ps-tooltip:before {
+    content: "49%";
+}
+
+.progress-factor .bar[aria-valuenow='50'] .ps-tooltip {
+    left: 50%;
+}
+
+.progress-factor .bar[aria-valuenow='50'] .ps-tooltip:before {
+    content: "50%";
+}
+
+.progress-factor .bar[aria-valuenow='51'] .ps-tooltip {
+    left: 51%;
+}
+
+.progress-factor .bar[aria-valuenow='51'] .ps-tooltip:before {
+    content: "51%";
+}
+
+.progress-factor .bar[aria-valuenow='52'] .ps-tooltip {
+    left: 52%;
+}
+
+.progress-factor .bar[aria-valuenow='52'] .ps-tooltip:before {
+    content: "52%";
+}
+
+.progress-factor .bar[aria-valuenow='53'] .ps-tooltip {
+    left: 53%;
+}
+
+.progress-factor .bar[aria-valuenow='53'] .ps-tooltip:before {
+    content: "53%";
+}
+
+.progress-factor .bar[aria-valuenow='54'] .ps-tooltip {
+    left: 54%;
+}
+
+.progress-factor .bar[aria-valuenow='54'] .ps-tooltip:before {
+    content: "54%";
+}
+
+.progress-factor .bar[aria-valuenow='55'] .ps-tooltip {
+    left: 55%;
+}
+
+.progress-factor .bar[aria-valuenow='55'] .ps-tooltip:before {
+    content: "55%";
+}
+
+.progress-factor .bar[aria-valuenow='56'] .ps-tooltip {
+    left: 56%;
+}
+
+.progress-factor .bar[aria-valuenow='56'] .ps-tooltip:before {
+    content: "56%";
+}
+
+.progress-factor .bar[aria-valuenow='57'] .ps-tooltip {
+    left: 57%;
+}
+
+.progress-factor .bar[aria-valuenow='57'] .ps-tooltip:before {
+    content: "57%";
+}
+
+.progress-factor .bar[aria-valuenow='58'] .ps-tooltip {
+    left: 58%;
+}
+
+.progress-factor .bar[aria-valuenow='58'] .ps-tooltip:before {
+    content: "58%";
+}
+
+.progress-factor .bar[aria-valuenow='59'] .ps-tooltip {
+    left: 59%;
+}
+
+.progress-factor .bar[aria-valuenow='59'] .ps-tooltip:before {
+    content: "59%";
+}
+
+.progress-factor .bar[aria-valuenow='60'] .ps-tooltip {
+    left: 60%;
+}
+
+.progress-factor .bar[aria-valuenow='60'] .ps-tooltip:before {
+    content: "60%";
+}
+
+.progress-factor .bar[aria-valuenow='61'] .ps-tooltip {
+    left: 61%;
+}
+
+.progress-factor .bar[aria-valuenow='61'] .ps-tooltip:before {
+    content: "61%";
+}
+
+.progress-factor .bar[aria-valuenow='62'] .ps-tooltip {
+    left: 62%;
+}
+
+.progress-factor .bar[aria-valuenow='62'] .ps-tooltip:before {
+    content: "62%";
+}
+
+.progress-factor .bar[aria-valuenow='63'] .ps-tooltip {
+    left: 63%;
+}
+
+.progress-factor .bar[aria-valuenow='63'] .ps-tooltip:before {
+    content: "63%";
+}
+
+.progress-factor .bar[aria-valuenow='64'] .ps-tooltip {
+    left: 64%;
+}
+
+.progress-factor .bar[aria-valuenow='64'] .ps-tooltip:before {
+    content: "64%";
+}
+
+.progress-factor .bar[aria-valuenow='65'] .ps-tooltip {
+    left: 65%;
+}
+
+.progress-factor .bar[aria-valuenow='65'] .ps-tooltip:before {
+    content: "65%";
+}
+
+.progress-factor .bar[aria-valuenow='66'] .ps-tooltip {
+    left: 66%;
+}
+
+.progress-factor .bar[aria-valuenow='66'] .ps-tooltip:before {
+    content: "66%";
+}
+
+.progress-factor .bar[aria-valuenow='67'] .ps-tooltip {
+    left: 67%;
+}
+
+.progress-factor .bar[aria-valuenow='67'] .ps-tooltip:before {
+    content: "67%";
+}
+
+.progress-factor .bar[aria-valuenow='68'] .ps-tooltip {
+    left: 68%;
+}
+
+.progress-factor .bar[aria-valuenow='68'] .ps-tooltip:before {
+    content: "68%";
+}
+
+.progress-factor .bar[aria-valuenow='69'] .ps-tooltip {
+    left: 69%;
+}
+
+.progress-factor .bar[aria-valuenow='69'] .ps-tooltip:before {
+    content: "69%";
+}
+
+.progress-factor .bar[aria-valuenow='70'] .ps-tooltip {
+    left: 70%;
+}
+
+.progress-factor .bar[aria-valuenow='70'] .ps-tooltip:before {
+    content: "70%";
+}
+
+.progress-factor .bar[aria-valuenow='71'] .ps-tooltip {
+    left: 71%;
+}
+
+.progress-factor .bar[aria-valuenow='71'] .ps-tooltip:before {
+    content: "71%";
+}
+
+.progress-factor .bar[aria-valuenow='72'] .ps-tooltip {
+    left: 72%;
+}
+
+.progress-factor .bar[aria-valuenow='72'] .ps-tooltip:before {
+    content: "72%";
+}
+
+.progress-factor .bar[aria-valuenow='73'] .ps-tooltip {
+    left: 73%;
+}
+
+.progress-factor .bar[aria-valuenow='73'] .ps-tooltip:before {
+    content: "73%";
+}
+
+.progress-factor .bar[aria-valuenow='74'] .ps-tooltip {
+    left: 74%;
+}
+
+.progress-factor .bar[aria-valuenow='74'] .ps-tooltip:before {
+    content: "74%";
+}
+
+.progress-factor .bar[aria-valuenow='75'] .ps-tooltip {
+    left: 75%;
+}
+
+.progress-factor .bar[aria-valuenow='75'] .ps-tooltip:before {
+    content: "75%";
+}
+
+.progress-factor .bar[aria-valuenow='76'] .ps-tooltip {
+    left: 76%;
+}
+
+.progress-factor .bar[aria-valuenow='76'] .ps-tooltip:before {
+    content: "76%";
+}
+
+.progress-factor .bar[aria-valuenow='77'] .ps-tooltip {
+    left: 77%;
+}
+
+.progress-factor .bar[aria-valuenow='77'] .ps-tooltip:before {
+    content: "77%";
+}
+
+.progress-factor .bar[aria-valuenow='78'] .ps-tooltip {
+    left: 78%;
+}
+
+.progress-factor .bar[aria-valuenow='78'] .ps-tooltip:before {
+    content: "78%";
+}
+
+.progress-factor .bar[aria-valuenow='79'] .ps-tooltip {
+    left: 79%;
+}
+
+.progress-factor .bar[aria-valuenow='79'] .ps-tooltip:before {
+    content: "79%";
+}
+
+.progress-factor .bar[aria-valuenow='80'] .ps-tooltip {
+    left: 80%;
+}
+
+.progress-factor .bar[aria-valuenow='80'] .ps-tooltip:before {
+    content: "80%";
+}
+
+.progress-factor .bar[aria-valuenow='81'] .ps-tooltip {
+    left: 81%;
+}
+
+.progress-factor .bar[aria-valuenow='81'] .ps-tooltip:before {
+    content: "81%";
+}
+
+.progress-factor .bar[aria-valuenow='82'] .ps-tooltip {
+    left: 82%;
+}
+
+.progress-factor .bar[aria-valuenow='82'] .ps-tooltip:before {
+    content: "82%";
+}
+
+.progress-factor .bar[aria-valuenow='83'] .ps-tooltip {
+    left: 83%;
+}
+
+.progress-factor .bar[aria-valuenow='83'] .ps-tooltip:before {
+    content: "83%";
+}
+
+.progress-factor .bar[aria-valuenow='84'] .ps-tooltip {
+    left: 84%;
+}
+
+.progress-factor .bar[aria-valuenow='84'] .ps-tooltip:before {
+    content: "84%";
+}
+
+.progress-factor .bar[aria-valuenow='85'] .ps-tooltip {
+    left: 85%;
+}
+
+.progress-factor .bar[aria-valuenow='85'] .ps-tooltip:before {
+    content: "85%";
+}
+
+.progress-factor .bar[aria-valuenow='86'] .ps-tooltip {
+    left: 86%;
+}
+
+.progress-factor .bar[aria-valuenow='86'] .ps-tooltip:before {
+    content: "86%";
+}
+
+.progress-factor .bar[aria-valuenow='87'] .ps-tooltip {
+    left: 87%;
+}
+
+.progress-factor .bar[aria-valuenow='87'] .ps-tooltip:before {
+    content: "87%";
+}
+
+.progress-factor .bar[aria-valuenow='88'] .ps-tooltip {
+    left: 88%;
+}
+
+.progress-factor .bar[aria-valuenow='88'] .ps-tooltip:before {
+    content: "88%";
+}
+
+.progress-factor .bar[aria-valuenow='89'] .ps-tooltip {
+    left: 89%;
+}
+
+.progress-factor .bar[aria-valuenow='89'] .ps-tooltip:before {
+    content: "89%";
+}
+
+.progress-factor .bar[aria-valuenow='90'] .ps-tooltip {
+    left: 90%;
+}
+
+.progress-factor .bar[aria-valuenow='90'] .ps-tooltip:before {
+    content: "90%";
+}
+
+.progress-factor .bar[aria-valuenow='91'] .ps-tooltip {
+    left: 91%;
+}
+
+.progress-factor .bar[aria-valuenow='91'] .ps-tooltip:before {
+    content: "91%";
+}
+
+.progress-factor .bar[aria-valuenow='92'] .ps-tooltip {
+    left: 92%;
+}
+
+.progress-factor .bar[aria-valuenow='92'] .ps-tooltip:before {
+    content: "92%";
+}
+
+.progress-factor .bar[aria-valuenow='93'] .ps-tooltip {
+    left: 93%;
+}
+
+.progress-factor .bar[aria-valuenow='93'] .ps-tooltip:before {
+    content: "93%";
+}
+
+.progress-factor .bar[aria-valuenow='94'] .ps-tooltip {
+    left: 94%;
+}
+
+.progress-factor .bar[aria-valuenow='94'] .ps-tooltip:before {
+    content: "94%";
+}
+
+.progress-factor .bar[aria-valuenow='95'] .ps-tooltip {
+    left: 95%;
+}
+
+.progress-factor .bar[aria-valuenow='95'] .ps-tooltip:before {
+    content: "95%";
+}
+
+.progress-factor .bar[aria-valuenow='96'] .ps-tooltip {
+    left: 96%;
+}
+
+.progress-factor .bar[aria-valuenow='96'] .ps-tooltip:before {
+    content: "96%";
+}
+
+.progress-factor .bar[aria-valuenow='97'] .ps-tooltip {
+    left: 97%;
+}
+
+.progress-factor .bar[aria-valuenow='97'] .ps-tooltip:before {
+    content: "97%";
+}
+
+.progress-factor .bar[aria-valuenow='98'] .ps-tooltip {
+    left: 98%;
+}
+
+.progress-factor .bar[aria-valuenow='98'] .ps-tooltip:before {
+    content: "98%";
+}
+
+.progress-factor .bar[aria-valuenow='99'] .ps-tooltip {
+    left: 99%;
+}
+
+.progress-factor .bar[aria-valuenow='99'] .ps-tooltip:before {
+    content: "99%";
+}
+
+.progress-factor .bar[aria-valuenow='100'] .ps-tooltip {
+    left: 100%;
+}
+
+.progress-factor .bar[aria-valuenow='100'] .ps-tooltip:before {
+    content: "100%";
+}
+
+.progress-factor .bar.heat-gradient .face-position.left {
+    background-color: rgba(241, 196, 15, 0.8);
+}
+
+.progress-factor .bar.heat-gradient .percentage:before {
+    background-color: rgba(241, 196, 15, 0.8);
+    background: -moz-linear-gradient(left, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(241, 196, 15, 0.8)), color-stop(100%, rgba(236, 0, 113, 0.6)));
+    background: -webkit-linear-gradient(left, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
+    background: -o-linear-gradient(left, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
+    background: -ms-linear-gradient(left, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
+    background: linear-gradient(to right, rgba(241, 196, 15, 0.8) 0%, rgba(236, 0, 113, 0.6) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2', GradientType=1);
+    background-size: 100%;
+}
+
+.progress-factor .bar.heat-gradient .volume-lights.shine:before {
+    box-shadow: -2em 1.6em 3em -1em rgba(241, 196, 15, 0.3), 2em 1.6em 3em -1em rgba(236, 0, 113, 0.3);
+}
+
+.progress-factor .bar.heat-gradient[valuenow="100"] .face-position.right {
+    background-color: rgba(236, 0, 113, 0.6);
+}
+
+/* Default */
+.progress-factor .bar.default-gradient .face-position.left {
+    background-color: var(--primary-color);
+}
+
+.progress-factor .bar.default-gradient .percentage:before {
+    background-color: var(--primary-color);
+    background-size: 100%;
+}
+
+.progress-factor .bar.default-gradient .volume-lights.shine:before {
+    box-shadow: -2em 1.6em 3em -1em var(--chart-tooltip);
+}
+
+.progress-factor .bar.default-gradient[valuenow="100"] .face-position.right {
+    background-color: var(--primary-color);
+}

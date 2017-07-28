@@ -1,0 +1,28 @@
+{
+    "name": "Dashboard Link",
+    "author": "Kuba Wolanin",
+    "description": "Clicking on widgets surface will move you to a given dashboard",
+    "settings": [
+        {
+            "type": "string",
+            "id": "dashboard_name",
+            "label": "Dashboard name"
+        },
+        {
+            "type": "item",
+            "id": "habpanel_item",
+            "label": "HABPanel Item"
+        },
+        {
+            "type": "string",
+            "id": "font_size",
+            "label": "Font size"
+        },
+        {
+            "type": "string",
+            "id": "label",
+            "label": "Label"
+        }
+    ],
+    "template": "<style>\n  .dashboard-link {\n    background: transparent;\n    border: 0;\n    width: 100%;\n    padding: 25px 0;\n    font-size: {{config.font_size}};\n    outline: none;\n}\n</style>\n<button class=\"dashboard-link\" \n        ng-click=\"sendCmd(config.habpanel_item, config.dashboard_name)\">\n  {{config.label}}\n</button>"
+}
