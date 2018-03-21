@@ -2,7 +2,7 @@
     "name": "Color Light",
     "author": "Kuba Wolanin",
     "description": "Combined color, brightness and switch widgets.",
-    "template": "<div ng-init='picker = {\n    \"name\": config.name,\n    \"item\": config.color,\n    \"style\": \"aCKolor\"\n};slider = {\n    \"name\": \"\",\n    \"item\": config.brightness,\n    \"floor\": 0,\n    \"ceil\": 100,\n    \"step\": 1,\n    \"unit\": \"\",\n    \"vertical\": false\n};switch = {\n    \"name\": \"\",\n    \"item\": config.brightness,\n    \"hidelabel\": true,\n    \"hideicon\": false,\n    \"hideonoff\": true\n}'>\n    <style>\n    .cl-switch .switch {\n      position: absolute;\n      top: 0;\n      width: 100%;\n\t\t}\n    </style>\n    <widget-colorpicker ng-model=\"picker\"></widget-colorpicker>\n    <widget-slider ng-model=\"slider\"></widget-slider>\n</div>",
+    "template": "<div ng-init='picker = {\n    \"name\": config.name,\n    \"item\": config.color,\n    \"style\": \"aCKolor\"\n};slider = {\n    \"name\": \"\",\n    \"item\": config.brightness,\n    \"floor\": 0,\n    \"ceil\": 100,\n    \"step\": 1,\n    \"unit\": \"\",\n    \"vertical\": false\n};slider2 = {\n    \"name\": \"\",\n    \"item\": config.colortemp_item,\n    \"floor\": 0,\n    \"ceil\": 100,\n    \"step\": 1,\n    \"unit\": \"\",\n    \"vertical\": false\n};switch = {\n    \"name\": \"\",\n    \"item\": config.brightness,\n    \"hidelabel\": true,\n    \"hideicon\": false,\n    \"hideonoff\": true\n}'>\n    <style>\n    .cl-switch .switch {\n      position: absolute;\n      top: 0;\n      width: 100%;\n\t\t}\n    </style>\n    <widget-colorpicker ng-model=\"picker\"></widget-colorpicker>\n    <widget-slider ng-model=\"slider\"></widget-slider>\n  \t<div ng-show=\"config.colortemp_show\"><widget-slider ng-model=\"slider2\"></widget-slider></div>\n</div>",
     "settings": [
         {
             "type": "string",
@@ -22,6 +22,19 @@
             "id": "color",
             "label": "Color Item",
             "description": "Color item"
+        },
+        {
+            "type": "checkbox",
+            "id": "colortemp_show",
+            "label": "Show color temperature slider",
+            "description": "Show color temperature slider",
+            "default": false
+        },
+        {
+            "type": "item",
+            "id": "colortemp_item",
+            "label": "Color temperature item",
+            "description": "Color temperature item"
         }
     ]
 }
